@@ -7,53 +7,75 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
-    body {
-      font-family: Arial;
-      background: #0b1a2f;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0a0f1c;
+  color: white;
+}
 
-    header {
-      background: #e63946;
-      padding: 15px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-    }
+header {
+  background: linear-gradient(90deg, #e63946, #1d3557);
+  padding: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+}
 
-    .container {
-      padding: 20px;
-    }
+.marquee {
+  background: #111827;
+  padding: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #122b45;
-    }
+.marquee span {
+  display: inline-block;
+  animation: scroll 12s linear infinite;
+}
 
-    th, td {
-      padding: 10px;
-      text-align: center;
-    }
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
 
-    th {
-      background: #1d3557;
-    }
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  padding: 15px;
+}
 
-    .won {
-      color: #00ff88;
-      font-weight: bold;
-    }
+.card {
+  background: #111827;
+  padding: 15px;
+  border-radius: 10px;
+}
 
-    .chart-box {
-      margin-top: 30px;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-    }
-  </style>
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #1d3557;
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+.won { color: #00ff88; font-weight: bold; }
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 
 <body>
